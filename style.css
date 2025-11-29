@@ -1,0 +1,312 @@
+/* General thingies for the body. */
+body {
+  font-family: 'DM Sans', sans-serif;
+  margin: 0;
+  background: #f4f9f4;
+  color: #333;
+  line-height: 1.6;
+}
+/* Dispay flex basically sets the header to be a row. Position fixed makes it stick to the top of the page. 
+Z index is the Stacking Order. It makes sure the header is on top of everything else. Box shadow is for the shadow effect.*/
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 10px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+/* Standard flex for the logo and brand so they dont get in top of the other. */
+header .logo,
+header .brand {
+  display: flex;
+  align-items: center;
+}
+/*Sets up the image size and margin for the logo*/
+header img {
+  width: 55px;
+  margin-right: 12px;
+}
+/*Basic Setup for the header text*/
+header h1 {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #2e7d32;
+  margin: 0;
+}
+/* Quote style for the header*/
+header .quote {
+  font-size: 0.9em;
+  font-style: italic;
+  color: #555;
+  margin: 0 30px;
+}
+/* Navigation */
+nav {
+  display: flex;
+  gap: 25px;
+}
+/* Transition basically animates it. Basic setup for the links. Colors are for the hover state. */
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 0.95em;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+/* Basically the hover state for the links. Active is for the current page you are on. */
+nav a:hover,
+nav a.active {
+  background: #2e7d32;
+  color: #fff;
+}
+/* Layout */
+main {
+  margin-top: 100px;
+  padding: 0 12%;
+}
+/* Basic setup for the sections. Box shadow and transition for the hover effect. */
+section {
+  background: #fff;
+  margin-bottom: 35px;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+/* Transform translatey negative 4px makes it go up 4px on hover. Box shadow is for the hover effect. */
+section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+}
+/* Headings and paragraphs, makes the green rectangle thingies */
+h2 {
+  color: #1b5e20;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  border-left: 6px solid #2e7d32;
+  padding-left: 10px;
+}
+p {
+  margin-bottom: 15px;
+}
+/* Border collapse basically makes the adjacent rows into one. 
+Basic Setup for the table. Makes the first row a little bigger and makes it green. */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+th, td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+th {
+  background: #2e7d32;
+  color: #fff;
+  font-weight: 600;
+}
+/* Links */
+a {
+  color: #2e7d32;
+  font-weight: 500;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* list style set to none so you wont see those ugly ahh bullets. */
+ul {
+  list-style: none;
+  padding: 0;
+}
+/* Basic setup for the list items. Transition the background so it doesnt just change instantly. */
+ul li {
+  margin-bottom: 10px;
+  background: #f1f8f1;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+/* Hover state for the list items. */
+ul li:hover {
+  background: #dcedc8;
+}
+/* Basic setup for the links inside the list items. */
+ul li a {
+  color: #2e7d32;
+  font-weight: 600;
+  text-decoration: none;
+}
+/* Basic setup for the image gallery*/
+.gallery {
+  margin: 20px 0;
+}
+/* Float left makes the images align next to each other. Width is set to 30% so three images fit in a row. Margin
+ is for spacing between the images. Object fit cover makes sure the image covers the entire area without distortion. */
+.gallery img {
+  float: left;
+  width: 30%;     
+  margin: 0 1.5% 20px 1.5%;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+/*  Cropping the image for the team section */
+.team img.cropped {
+  object-position: bottom;
+}
+/* Basic setup, change of line height for the contact. */
+.contact p {
+  background: #f1f8f1;
+  padding: 15px;
+  border-radius: 10px;
+  line-height: 1.8;
+}
+/* basic setup for the footer. */
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #2e7d32;
+  color: white;
+  margin-top: 40px;
+  font-size: 0.9em;
+}
+.icon1 {
+  background: url('media/imagesprite.jpg') no-repeat -37px -37px;
+  width: 42px;
+  height: 42px;
+  background-size: 640px 174px;
+}
+
+.icon2 {
+  background: url('media/imagesprite.jpg') no-repeat -154px -37px;
+  width: 42px;
+  height: 42px;
+  background-size: 640px 174px;
+}
+
+
+.gallery::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.galler img {
+  margin-top: 60px;
+  height: 300px;
+}
+/* Alternating image + text layout */
+.alt-row {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+}
+.alt-row img {
+  width: 35%;
+  height: 250px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.alt-row p {
+  width: 60%;
+  font-size: 1.05em;
+  line-height: 1.6;
+}
+.reverse p {
+  text-align: right;
+}
+.alt-row.toto {
+  margin-top: 60px;
+}
+.eco-tips-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.eco-tips-list li {
+  display: flex;          /* side-by-side layout */
+  align-items: center;    /* vertically align image + text */
+  gap: 20px;              /* space between image and text */
+  background: #f1f8f1;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  transition: background 0.3s;
+}
+
+.eco-tips-list li:hover {
+  background: #dcedc8;
+}
+
+.eco-tips-list img {
+  width: 60x;           /* adjust as needed */
+  height: 60px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.eco-tips-list p {
+  margin: 0;
+  font-size: 1.05em;
+  line-height: 1.4;
+}
+.eco-habits-row {
+  display: flex;
+  align-items: center; /* aligns top of image with top of text */
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.eco-habits-row img {
+  width: 40%;          /* large image on the left */
+  height: auto;        /* keep natural proportions */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  object-fit: cover;
+}
+
+.eco-habits-text {
+  width: 60%;          /* text takes the remaining space */
+}
+
+.eco-habits-text ul {
+  padding-left: 20px;
+}
+
+.eco-habits-text li {
+  margin-bottom: 12px;
+  font-size: 1.05em;
+  line-height: 1.5;
+}
+footer {
+  display: flex;             /* enable flexbox */
+  align-items: center;       /* vertically center icons + text */
+  justify-content: center;   /* center horizontally */
+  gap: 15px;                 /* space between icons and text */
+  padding: 10px;
+  background: #2e7d32;
+  color: white;
+  margin-top: 40px;
+  font-size: 0.9em;
+  flex-wrap: wrap;           /* optional: wrap if screen is too small */
+}
+.gallery img:hover {
+  transform: scale(1.04);
+  transition: transform 0.25s ease;
+}
